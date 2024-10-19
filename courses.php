@@ -1,14 +1,12 @@
 <?php
 session_start();
 
-// Параметры подключения к базе данных
 $host = 'localhost';
 $db   = 'broldru_deni';
 $user = 'broldru_deni';
 $pass = 'Sa4_nambe8';
 $charset = 'utf8mb4';
 
-// Настройка DSN и опций PDO
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
@@ -53,7 +51,6 @@ $user_id = $telegram_id;
     <title>All tests</title>
     <link rel="stylesheet" href="https://brold.ru/courses-style.css">
     <style>
-        /* Добавим стили для кнопок назад */
         .back-arrow {
             position: absolute;
             top: 10px;
@@ -88,7 +85,6 @@ $user_id = $telegram_id;
     </style>
 </head>
 <body style="max-width: 480px;margin: 0 auto;">
-    <!-- Стрелка назад в верхнем левом углу -->
     <a href="index.php?telegram_id=<?php echo htmlspecialchars($telegram_id); ?>" class="back-arrow">&#8592;</a>
 
     <div class="courses">
@@ -142,7 +138,6 @@ $user_id = $telegram_id;
             }
             ?>
         </ul>
-        <!-- Кнопка назад в нижней части страницы -->
         <a href="index.php?telegram_id=<?php echo htmlspecialchars($telegram_id); ?>" class="back-button">Назад</a>
     </div>
     
