@@ -32,7 +32,29 @@ $lessonID = null;
 if($_GET['lesson_id']) {
     $lessonID = $_GET['lesson_id'];
 }
-$user_id = 6455709242; //soon...
+$telegram_id = isset($_GET['telegram_id']) ? $_GET['telegram_id'] : null;
+
+if ($telegram_id === null) {
+    echo 'Ошибка: telegram_id не передан.';
+    ?>
+    <script>window.location.href = 'https://brold.ru/index.php';</script>
+    <?php
+    exit();
+}
+
+$stmt = $pdo->prepare("SELECT * FROM users WHERE idtelegram = ?");
+$stmt->execute([$telegram_id]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$user) {
+    echo 'Ошибка: пользователь не найден.';
+    ?>
+    <script>window.location.href = 'https://brold.ru/index.php';</script>
+    <?php
+    exit();
+}
+
+$user_id = $telegram_id;
 
 $stmt = $pdo->prepare("SELECT * FROM courses WHERE id = :course_id");
 $stmt->execute(['course_id' => $course_id]);
