@@ -1,0 +1,88 @@
+* {
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+}
+body {
+    background: #000;
+    border-right: 2px solid gray;
+}
+ul {
+    list-style: none;
+}
+
+.courses .__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+h1 {
+    padding: 10px 15px;
+}
+
+.courses .__list .course-item {
+    background: rgb(35, 35, 35);
+    border-radius: 25px;
+    padding: 10px 15px;
+}
+.courses .__list .course-item h2 {
+    line-height: 1.5;
+}
+.courses .__list .course-item .progress {
+    background: rgb(0,198,0);
+    background: linear-gradient(225deg, rgba(0,198,0,1) 0%, rgba(58,255,58,1) 100%);
+    padding: 10px;
+    border-radius: 15px;
+}
+.courses .__list .course-item h3 {
+    line-height: 1.5;
+}
+.courses .__list .course-item .description {
+    color: #d3d3d3;
+    display: -webkit-box;
+    max-width: 100%;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    text-align: justify;
+    margin: 8px 0;
+}
+.courses .__list .course-item .progress-bar {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    background: #303030;
+    border-radius: 50px;
+    margin: 5px 0;
+    overflow: hidden;
+}
+.courses .__list .course-item .progress-indicator {
+    position: absolute;
+    left: 0;
+    top:0;
+    bottom: 0;
+    background: rgb(255,255,255);
+    background: linear-gradient(225deg, rgba(255,255,255,1) 0%, rgba(225,255,237,1) 100%);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.courses .__list .course-item button.btn {
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    border: unset;
+    border-radius: 15px;
+    width: 100%;
+    background: #757575;
+    cursor: pointer;
+}
+.courses .__list .course-item button.continue_course_btn {
+    background: #0cd030;
+}
+.courses .__list .course-item button:hover {
+    opacity: .9;
+}
